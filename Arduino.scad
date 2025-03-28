@@ -4,8 +4,6 @@ arduino_depth = 53.34;
 arduino_uno_width = 68.58;
 arduino_mega2560_width = 101.6;
 
-pcb_height = 1.7;
-
 arduino_uno_shape = [ 
    [0.0, 0.0],
    [0.0, 66.04],

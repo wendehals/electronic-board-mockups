@@ -3,8 +3,6 @@ include <Commons.scad>
 raspberry_zero_depth = 30;
 raspberry_zero_width = 65;
 
-pcb_height = 1.4;
-
 module Raspberry_Pi_Zero() {
    difference(){
       translate([3, 3, 0]) color("green")
@@ -14,13 +12,13 @@ module Raspberry_Pi_Zero() {
          }
 
       translate([3.5, 3.5, -delta])
-         cylinder(h = 2, d = 2.7);
+         cylinder(h = pcb_height + 2*delta, d = 2.7, $fn=32);
       translate([raspberry_zero_depth - 3.5, 3.5, -delta])
-         cylinder(h = 2, d = 2.7);
+         cylinder(h = pcb_height + 2*delta, d = 2.7, $fn=32);
       translate([3.5, raspberry_zero_width - 3.5, -delta])
-         cylinder(h = 2, d = 2.7);
+         cylinder(h = pcb_height + 2*delta, d = 2.7, $fn=32);
       translate([raspberry_zero_depth - 3.5, raspberry_zero_width - 3.5, -delta])
-         cylinder(h = 2, d = 2.7);
+         cylinder(h = pcb_height + 2*delta, d = 2.7, $fn=32);
    }
 
    translate([raspberry_zero_depth - 3.5 - pitch, (raspberry_zero_width - 20*pitch)/2, pcb_height])

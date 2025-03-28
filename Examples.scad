@@ -1,6 +1,7 @@
 include <Arduino.scad>
 include <Raspberry_Pi.scad>
 include <Breadboards.scad>
+include <ESP.scad>
 
 $fn=16;
 
@@ -20,3 +21,6 @@ translate([breadboard_depth + 10, arduino_mega2560_width + 10, 0])
 
 translate([2*breadboard_depth + 2*10, arduino_mega2560_width + 10, 0])
    Breadboard(MINI);
+
+translate([170, 0, 0])
+   ESP32_Dev_Kit();

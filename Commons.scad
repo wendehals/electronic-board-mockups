@@ -1,9 +1,10 @@
 pitch = 2.54;
+pcb_height = 1.7;
+
 delta = 0.5;
 
 FEMALE = 0;
 MALE = 1;
-
 
 module pin_header(pins = 1, rows = 1, type = MALE) {
    for (i = [0 : 1 : rows - 1]) {
@@ -36,6 +37,14 @@ module pin_male(){
 
     color("gold") translate([(pitch - 0.65)/2, (pitch - 0.65)/2, -3])
         cube([0.64, 0.64, 11]); 
+}
+
+module usb_3_0_port() {
+   color("silver") translate([1, 7.5, 1]) rotate([90, 0, 0])
+      minkowski() {
+         cube([7, 1, 1]);
+         cylinder(h = 6.5, d = 2, $fn=32);
+      }
 }
 
 module usb_micro_port() {
