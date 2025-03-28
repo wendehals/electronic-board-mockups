@@ -53,7 +53,7 @@ module Arduino(type = UNO) {
       color("green")
          pcb(type[0]);
 
-         holes(type[1]);
+         pcb_holes(type[1]);
    }
 
    translate([9.53, -6.35, pcb_height])
@@ -98,7 +98,7 @@ module pcb(shape, height = pcb_height) {
       polygon(shape);
 }
 
-module holes(mounts, height = pcb_height) {
+module pcb_holes(mounts, height = pcb_height) {
    for(i = mounts) {
       translate([i[0], i[1], -delta])
          cylinder(h = height + 2*delta, r = 3.2/2, $fn=32);
