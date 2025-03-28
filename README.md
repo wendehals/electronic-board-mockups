@@ -3,6 +3,9 @@
 This repository contains OpenSCAD models for various microcontroller and single board computers:
 * Arduino UNO and MEGA2560 (most other Arduino boards are shape-compatible to those two)
 * Raspberry Pi Zero
+* Breadboards
+
+![](Examples.png)
 
 This repository is distributed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
