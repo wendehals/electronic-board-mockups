@@ -11,17 +11,17 @@ module Raspberry_Pi_Zero() {
          minkowski(){
             cube([raspberry_zero_depth - 6, raspberry_zero_width - 6, pcb_height/2]);
             cylinder(h = pcb_height/2, r = 3, center = false);
-   }
+         }
 
-   translate([3.5, 3.5, -0.5])
-      cylinder(h = 2, d = 2.7);
-   translate([raspberry_zero_depth - 3.5, 3.5, -0.5])
-      cylinder(h = 2, d = 2.7);
-   translate([3.5, raspberry_zero_width - 3.5, -0.5])
-      cylinder(h = 2, d = 2.7);
-   translate([raspberry_zero_depth - 3.5, raspberry_zero_width - 3.5, -0.5])
-      cylinder(h = 2, d = 2.7);
-}
+      translate([3.5, 3.5, -delta])
+         cylinder(h = 2, d = 2.7);
+      translate([raspberry_zero_depth - 3.5, 3.5, -delta])
+         cylinder(h = 2, d = 2.7);
+      translate([3.5, raspberry_zero_width - 3.5, -delta])
+         cylinder(h = 2, d = 2.7);
+      translate([raspberry_zero_depth - 3.5, raspberry_zero_width - 3.5, -delta])
+         cylinder(h = 2, d = 2.7);
+   }
 
    translate([raspberry_zero_depth - 3.5 - pitch, (raspberry_zero_width - 20*pitch)/2, pcb_height])
       pin_header(20, 2);

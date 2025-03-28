@@ -1,5 +1,5 @@
 pitch = 2.54;
-delta = 0.25;
+delta = 0.5;
 
 FEMALE = 0;
 MALE = 1;
