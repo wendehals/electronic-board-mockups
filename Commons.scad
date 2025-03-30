@@ -1,7 +1,7 @@
 pitch = 2.54;
 pcb_height = 1.7;
 
-delta = 0.5;
+delta = 0.25;
 
 FEMALE = 0;
 MALE = 1;
@@ -47,9 +47,17 @@ module usb_3_0_port() {
       }
 }
 
+module usb_double_a_port() {
+   color("silver")
+      cube([13, 16, 15]);
+
+   color("silver") translate([-1, -1, 0])
+      cube([15, 1, 17]);
+}
+
 module usb_micro_port() {
    color("silver")
-      cube([5.5, 8, 3]);
+      cube([8, 5.5, 3]);
 }
 
 module usb_b_port() {
@@ -57,12 +65,43 @@ module usb_b_port() {
       cube([12, 16, 10.5]);
 }
 
+module hdmi_port() {
+   color("silver")
+      cube([15, 11, 6]);
+}
+
 module hdmi_mini_port() {
    color("silver")
       cube([7.5, 11.2, 3.2]);
 }
 
+module hdmi_micro_port() {
+   color("silver")
+      cube([6.5, 7.5, 3.4]);
+}
+
+module rj45_port() {
+   color("silver")
+      cube([16, 21, 13.5]);
+}
+
 module power_jack() {
    color("black")
       cube([8.9, 13.7, 11]);
+}
+
+module audio_jack() {
+   color("black")
+      cube([7, 12, 5.5]);
+
+   color("black") translate([3.5, 0, 5.5/2]) rotate([90, 0, 0])
+      cylinder(h = 3, d= 5.5, $fn=32);
+}
+
+module micro_sd_card_slot_with_card() {
+   color("silver")
+      cube([11.5, 11, 1.5]);
+
+   color("blue") translate([0, 11, 0])
+      cube([11.5, 4, 1.5]);
 }

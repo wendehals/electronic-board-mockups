@@ -8,6 +8,8 @@ breadboard_depth = 55;
 breadboard_width = 166;
 breadboard_height = 10;
 
+nose_depth = 1.5;
+
 half_size_breadboard_width = 82;
 
 mini_breadboard_depth = 35;
@@ -51,13 +53,13 @@ module full_size_breadboard() {
    }
 
    color("white") translate([breadboard_depth, 12.5, 1])
-      cube([2, 4.5, 5]);
+      cube([nose_depth, 4.5, 5]);
 
    color("white") translate([breadboard_depth, (breadboard_width - 4.5)/2, 1])
-      cube([2, 4.5, 5]);
+      cube([nose_depth, 4.5, 5]);
 
    color("white") translate([breadboard_depth, breadboard_width - 17, 1])
-      cube([2, 4.5, 5]);
+      cube([nose_depth, 4.5, 5]);
 }
 
 module half_size_breadboard() {
@@ -88,19 +90,19 @@ module half_size_breadboard() {
    }
 
    color("white") translate([breadboard_depth, 12, 1])
-      cube([2, 4, 5]);
+      cube([nose_depth, 4, 5]);
 
    color("white") translate([breadboard_depth, half_size_breadboard_width - 16, 1])
-      cube([2, 4, 5]);
+      cube([nose_depth, 4, 5]);
 
    color("white") translate([2.5, half_size_breadboard_width, 1])
-      cube([4, 2, 5]);
+      cube([4, nose_depth, 5]);
 
    color("white") translate([(breadboard_depth - 4)/2, half_size_breadboard_width, 1])
-      cube([4, 2, 5]);
+      cube([4, nose_depth, 5]);
 
    color("white") translate([breadboard_depth - 6.5, half_size_breadboard_width, 1])
-      cube([4, 2, 5]);
+      cube([4, nose_depth, 5]);
 }
 
 module mini_breadboard() {
@@ -118,11 +120,11 @@ module mini_breadboard() {
          pin_holes(5, 17);
    }
 
-   color("white") translate([-2, (mini_breadboard_width - 4.5)/2, 1])
-      cube([2, 4.5, 5]);
+   color("white") translate([-nose_depth, (mini_breadboard_width - 4.5)/2, 1])
+      cube([nose_depth, 4.5, 5]);
 
    color("white") translate([(mini_breadboard_depth - 4.5)/2, mini_breadboard_width, 1])
-      cube([4.5, 2, 5]);
+      cube([4.5, nose_depth, 5]);
 }
 
 module pin_holes(rows = 5, columns = 65) {
