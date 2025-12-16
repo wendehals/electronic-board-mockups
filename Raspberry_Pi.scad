@@ -84,7 +84,7 @@ module Raspberry_Pi_5_ModelB() {
       usb_double_a_port();
 }
 
-module Raspberry_Pi_Zero() {
+module Raspberry_Pi_Zero(withHeader = true) {
    difference(){
       translate([3, 3, 0]) color("green")
          minkowski(){
@@ -102,9 +102,11 @@ module Raspberry_Pi_Zero() {
          cylinder(h = pcb_height + 2*delta, d = 2.7, $fn=32);
    }
 
-   translate([raspberry_zero_depth - 3.5 - pitch, (raspberry_zero_width - 20*pitch)/2, pcb_height])
-      pin_header(20, 2);
-
+   if (withHeader) {
+      translate([raspberry_zero_depth - 3.5 - pitch, (raspberry_zero_width - 20*pitch)/2, pcb_height])
+         pin_header(20, 2);
+   }
+ 
    translate([-0.5, raspberry_zero_width - 12.4 - 11.2/2, pcb_height])
       hdmi_mini_port();
 
